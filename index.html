@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mechatlon Sports Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      background-color: #f8f9fa;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 15px;
+      height: 100%;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+    }
+
+    .price { color: #B12704; font-weight: bold; }
+    .mrp { text-decoration: line-through; color: #888; }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<main class="container mt-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <img src="static/images/mecathlon_logo.png" alt="Mecathlon Logo" style="height: 90px;">
+    <h2 class="text-center flex-grow-1">🏋️ Mechatlon Sports</h2>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <select id="categoryFilter" class="form-select">
+        <option value="all">Filter by Category</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <select id="ratingSort" class="form-select">
+        <option value="default">Sort by Rating</option>
+        <option value="asc">Low to High</option>
+        <option value="desc">High to Low</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Product cards -->
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4" id="productContainer">
+    
+  <div class="col">
+    <div class="product-card h-100" data-category="Sports Equipment">
+      <img src="static/images/product_1.png" alt="Nivia Graffiti Basketball" class="product-image mb-2">
+      <h6 class="product-name">Nivia Graffiti Basketball</h6>
+      <p class="mb-1">
+        <span class="price">₹705</span>
+        <span class="mrp">₹849</span>
+        <small class="text-success">(17% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.1</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Sports Equipment">
+      <img src="static/images/product_2.png" alt="Cosco Volleyball" class="product-image mb-2">
+      <h6 class="product-name">Cosco Volleyball</h6>
+      <p class="mb-1">
+        <span class="price">₹503</span>
+        <span class="mrp">₹799</span>
+        <small class="text-success">(37% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.7</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Sports Equipment">
+      <img src="static/images/product_3.png" alt="SG Cricket Bat (KLR Edition)" class="product-image mb-2">
+      <h6 class="product-name">SG Cricket Bat (KLR Edition)</h6>
+      <p class="mb-1">
+        <span class="price">₹1124</span>
+        <span class="mrp">₹1499</span>
+        <small class="text-success">(25% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.5</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Sports Equipment">
+      <img src="static/images/product_4.png" alt="Spartan Tennis Ball" class="product-image mb-2">
+      <h6 class="product-name">Spartan Tennis Ball</h6>
+      <p class="mb-1">
+        <span class="price">₹212</span>
+        <span class="mrp">₹299</span>
+        <small class="text-success">(29% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.9</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Sports Equipment">
+      <img src="static/images/product_5.png" alt="Yonex Badminton Racket GR-303" class="product-image mb-2">
+      <h6 class="product-name">Yonex Badminton Racket GR-303</h6>
+      <p class="mb-1">
+        <span class="price">₹965</span>
+        <span class="mrp">₹1149</span>
+        <small class="text-success">(16% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">3.8</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Fitness & Training">
+      <img src="static/images/product_6.png" alt="Strauss Adjustable Dumbbells 5kg" class="product-image mb-2">
+      <h6 class="product-name">Strauss Adjustable Dumbbells 5kg</h6>
+      <p class="mb-1">
+        <span class="price">₹892</span>
+        <span class="mrp">₹1049</span>
+        <small class="text-success">(15% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.4</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Swimming & Yoga">
+      <img src="static/images/product_7.png" alt="Adidas Yoga Mat (Anti-Slip)" class="product-image mb-2">
+      <h6 class="product-name">Adidas Yoga Mat (Anti-Slip)</h6>
+      <p class="mb-1">
+        <span class="price">₹779</span>
+        <span class="mrp">₹999</span>
+        <small class="text-success">(22% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.1</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Apparel & Footwear">
+      <img src="static/images/product_8.png" alt="Puma Sports T-shirt (Dryfit)" class="product-image mb-2">
+      <h6 class="product-name">Puma Sports T-shirt (Dryfit)</h6>
+      <p class="mb-1">
+        <span class="price">₹569</span>
+        <span class="mrp">₹749</span>
+        <small class="text-success">(24% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.9</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Apparel & Footwear">
+      <img src="static/images/product_9.png" alt="Nike Training Shoes Men" class="product-image mb-2">
+      <h6 class="product-name">Nike Training Shoes Men</h6>
+      <p class="mb-1">
+        <span class="price">₹2903</span>
+        <span class="mrp">₹3299</span>
+        <small class="text-success">(12% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.6</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Fitness & Training">
+      <img src="static/images/product_10.png" alt="Fitbit Charge 5" class="product-image mb-2">
+      <h6 class="product-name">Fitbit Charge 5</h6>
+      <p class="mb-1">
+        <span class="price">₹6300</span>
+        <span class="mrp">₹14999</span>
+        <small class="text-success">(58% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.9</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Fitness & Training">
+      <img src="static/images/product_11.png" alt="Reebok Skipping Rope" class="product-image mb-2">
+      <h6 class="product-name">Reebok Skipping Rope</h6>
+      <p class="mb-1">
+        <span class="price">₹394</span>
+        <span class="mrp">₹499</span>
+        <small class="text-success">(21% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">3.7</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Sports Equipment">
+      <img src="static/images/product_12.png" alt="Spalding Marble Basketball" class="product-image mb-2">
+      <h6 class="product-name">Spalding Marble Basketball</h6>
+      <p class="mb-1">
+        <span class="price">₹1054</span>
+        <span class="mrp">₹1405</span>
+        <small class="text-success">(25% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.5</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Sports Equipment">
+      <img src="static/images/product_13.png" alt="DSC Wicket Keeping Gloves" class="product-image mb-2">
+      <h6 class="product-name">DSC Wicket Keeping Gloves</h6>
+      <p class="mb-1">
+        <span class="price">₹494</span>
+        <span class="mrp">₹1299</span>
+        <small class="text-success">(62% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.7</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Swimming & Yoga">
+      <img src="static/images/product_14.png" alt="Speedo Swim Goggles" class="product-image mb-2">
+      <h6 class="product-name">Speedo Swim Goggles</h6>
+      <p class="mb-1">
+        <span class="price">₹755</span>
+        <span class="mrp">₹899</span>
+        <small class="text-success">(16% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.5</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Accessories">
+      <img src="static/images/product_15.png" alt="Wildcraft Gym Bag" class="product-image mb-2">
+      <h6 class="product-name">Wildcraft Gym Bag</h6>
+      <p class="mb-1">
+        <span class="price">₹971</span>
+        <span class="mrp">₹1199</span>
+        <small class="text-success">(19% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.0</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Fitness & Training">
+      <img src="static/images/product_16.png" alt="Adjustable Hand Grip Strengthener" class="product-image mb-2">
+      <h6 class="product-name">Adjustable Hand Grip Strengthener</h6>
+      <p class="mb-1">
+        <span class="price">₹601</span>
+        <span class="mrp">₹699</span>
+        <small class="text-success">(14% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.0</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Accessories">
+      <img src="static/images/product_17.png" alt="Vector X Shin Guard" class="product-image mb-2">
+      <h6 class="product-name">Vector X Shin Guard</h6>
+      <p class="mb-1">
+        <span class="price">₹487</span>
+        <span class="mrp">₹649</span>
+        <small class="text-success">(25% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.3</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Sports Equipment">
+      <img src="static/images/product_18.png" alt="Butterfly TT Bat Wakaba" class="product-image mb-2">
+      <h6 class="product-name">Butterfly TT Bat Wakaba</h6>
+      <p class="mb-1">
+        <span class="price">₹709</span>
+        <span class="mrp">₹999</span>
+        <small class="text-success">(29% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.9</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Sports Equipment">
+      <img src="static/images/product_19.png" alt="Nivia Football Size 5" class="product-image mb-2">
+      <h6 class="product-name">Nivia Football Size 5</h6>
+      <p class="mb-1">
+        <span class="price">₹769</span>
+        <span class="mrp">₹999</span>
+        <small class="text-success">(23% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">3.6</span></p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="product-card h-100" data-category="Sports Equipment">
+      <img src="static/images/product_20.png" alt="Li-Ning Badminton Kitbag" class="product-image mb-2">
+      <h6 class="product-name">Li-Ning Badminton Kitbag</h6>
+      <p class="mb-1">
+        <span class="price">₹1130</span>
+        <span class="mrp">₹1299</span>
+        <small class="text-success">(13% OFF)</small>
+      </p>
+      <p class="mb-1">⭐ <span class="rating">4.2</span></p>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- Pagination Buttons -->
+  <div class="d-flex justify-content-center mt-4">
+    <button id="prevBtn" class="btn btn-outline-secondary me-2" disabled>Previous</button>
+    <button id="nextBtn" class="btn btn-outline-primary">Next</button>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p class="mb-0">© 2025 Mechatlon Sports. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".product-card");
+    const container = document.getElementById("productContainer");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const ratingSort = document.getElementById("ratingSort");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    const PRODUCTS_PER_PAGE = 10;
+    let currentPage = 1;
+    let filteredData = [];
+
+    const productData = Array.from(cards).map(card => ({
+      element: card.parentElement,
+      name: card.querySelector(".product-name").textContent,
+      rating: parseFloat(card.querySelector(".rating").textContent),
+      category: card.getAttribute("data-category")
+    }));
+
+    const uniqueCategories = [...new Set(productData.map(p => p.category))];
+    uniqueCategories.forEach(cat => {
+      const option = document.createElement("option");
+      option.value = cat;
+      option.textContent = cat;
+      categoryFilter.appendChild(option);
+    });
+
+    function renderFiltered() {
+      const selectedCat = categoryFilter.value;
+      const sortVal = ratingSort.value;
+
+      filteredData = [...productData];
+      if (selectedCat !== "all") {
+        filteredData = filteredData.filter(p => p.category === selectedCat);
+      }
+
+      if (sortVal === "asc") {
+        filteredData.sort((a, b) => a.rating - b.rating);
+      } else if (sortVal === "desc") {
+        filteredData.sort((a, b) => b.rating - a.rating);
+      }
+
+      currentPage = 1;
+      renderPage();
+    }
+
+    function renderPage() {
+      const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+      const endIndex = startIndex + PRODUCTS_PER_PAGE;
+      const currentItems = filteredData.slice(startIndex, endIndex);
+
+      container.innerHTML = "";
+      currentItems.forEach(p => container.appendChild(p.element));
+
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = endIndex >= filteredData.length;
+    }
+
+    categoryFilter.addEventListener("change", renderFiltered);
+    ratingSort.addEventListener("change", renderFiltered);
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderPage();
+      }
+    });
+    nextBtn.addEventListener("click", () => {
+      if ((currentPage * PRODUCTS_PER_PAGE) < filteredData.length) {
+        currentPage++;
+        renderPage();
+      }
+    });
+
+    // Initial Load
+    filteredData = productData;
+    renderPage();
+  });
+</script>
+
+</body>
+</html>
